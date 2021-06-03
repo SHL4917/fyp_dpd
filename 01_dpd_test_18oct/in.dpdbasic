@@ -1,0 +1,41 @@
+# Test of the DPD packages
+# Values are all arbitrary 
+
+comm_modify		vel yes
+dimension		2
+
+units			lj
+atom_style		dpd
+pair_style		dpd/fdt 1.0 1.0 69
+
+# Create simulation box and populate with particles
+
+lattice			hex 1
+region			wholebox block -10 10 -10 10 -0.5 0.5 units lattice
+create_box 		1 wholebox
+create_atoms		1 box
+
+# Set mass of particles and pair coefficients
+mass			* 1
+pair_coeff		* * 12 4
+
+# Set initial translational velocities
+velocity		all create 1.0 6969 dist gaussian
+
+# Set neighbor list parameters?
+neighbor		5.0 bin
+neigh_modify		every 2
+
+# Simulation parameters
+timestep		0.05
+thermo			10
+
+# Fixes
+fix			1 all nve
+fix			2 all enforce2d
+
+# Output
+dump			1 all atom 30 dump.dpdbasic
+
+reset_timestep		0
+run			3000

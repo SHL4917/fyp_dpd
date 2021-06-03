@@ -1,0 +1,219 @@
+# mpiexec: MPI is /apps/mpi/intel/2019.6.166
+# mpiexec: No RDMA network found -- using sockets+shared memory
+# mpiexec: bootstrapping with /apps/mpi/intel/2019.6.166/bin/__pbs_tmrsh
+# mpiexec: full path to program is /apps/lammps/19Mar2020/bin/lmp
+# mpiexec: program arguments are: -i in.polymer_test
+# mpiexec: 16 ranks allocated via PBS select
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has shared use of the allocated nodes. Disabling process-pinning
+# mpiexec: machinefile configured as:
+cx3-6-14.cx3.hpc.ic.ac.uk:16
+#
+# mpiexec: Checking all nodes are ONLINE:
+# mpiexec: All nodes appear ONLINE
+# mpiexec: launch started at Tue 19 Jan 12:03:58 GMT 2021
+# mpiexec: launching program...
+# /apps/lammps/19Mar2020/bin/lmp -i in.polymer_test
+(cx3-6-14.cx3.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15)
+
+LAMMPS (19 Mar 2020)
+  using 1 OpenMP thread(s) per MPI task
+Reading data file ...
+  orthogonal box = (0 0 0) to (40 40 40)
+  2 by 2 by 4 MPI processor grid
+  reading atoms ...
+  192000 atoms
+  scanning bonds ...
+  1 = max bonds/atom
+  reading bonds ...
+  8918 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          0          0         
+  special bond factors coul: 0          0          0         
+  2 = max # of 1-2 neighbors
+  2 = max # of 1-3 neighbors
+  4 = max # of 1-4 neighbors
+  6 = max # of special neighbors
+  special bonds CPU = 0.00732721 secs
+  read_data CPU = 0.280551 secs
+9604 atoms in group polymer
+Using type 4 for bond particles
+Thermo normalization turned off by pair srp (src/USER-MISC/pair_srp.cpp:498)
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 3000, page size: 100000
+  master list distance cutoff = 6
+  ghost atom cutoff = 8
+  binsize = 3, bins = 14 14 14
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair dpd, perpetual, skip from (3)
+      attributes: half, newton on
+      pair build: skip
+      stencil: none
+      bin: none
+  (2) pair srp, perpetual, skip from (3)
+      attributes: half, newton on
+      pair build: skip
+      stencil: none
+      bin: none
+  (3) neighbor class addition, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : lj
+  Current step  : 0
+  Time step     : 0.04
+Removed/inserted 0/8918 bond particles. (src/USER-MISC/fix_srp.cpp:257)
+Per MPI rank memory allocation (min/avg/max) = 152.8 | 166.1 | 183 Mbytes
+Step Temp E_pair E_mol TotEng Press 
+       0            1    672444.22    1451.9591    961894.68     20.61895 
+   10000    1.0217262    851652.11    2995.1248    1148902.9    23.470524 
+Deleted 8918 atoms, new total = 192000
+Loop time of 4588.1 on 16 procs for 10000 steps with 192000 atoms
+
+Performance: 7532.522 tau/day, 2.180 timesteps/s
+98.5% CPU use with 16 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 1416.8     | 1545.9     | 1739.8     | 271.5 | 33.69
+Bond    | 0.19274    | 0.22705    | 0.26531    |   4.3 |  0.00
+Neigh   | 1970.7     | 1971.1     | 1971.9     |   0.8 | 42.96
+Comm    | 749.67     | 967.67     | 1083.9     | 340.3 | 21.09
+Output  | 0.00016513 | 0.00025931 | 0.0005293  |   0.0 |  0.00
+Modify  | 53.638     | 95.19      | 120.04     | 254.9 |  2.07
+Other   |            | 8.05       |            |       |  0.18
+
+Nlocal:    12000 ave 12051 max 11950 min
+Histogram: 1 1 0 5 3 0 3 1 0 2
+Nghost:    89151.4 ave 89239 max 89087 min
+Histogram: 2 2 2 3 1 1 2 1 0 2
+Neighs:    1.62791e+07 ave 1.67008e+07 max 1.58712e+07 min
+Histogram: 2 1 2 1 2 1 1 5 0 1
+
+Total # of neighbors = 260466396
+Ave neighs/atom = 1356.6
+Ave special neighs/atom = 0.25725
+Neighbor list builds = 653
+Dangerous builds = 0
+WARNING: New thermo_style command, previous thermo_modify settings will be lost (src/output.cpp:708)
+Using type 4 for bond particles
+Thermo normalization turned off by pair srp (src/USER-MISC/pair_srp.cpp:498)
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 3000, page size: 100000
+  master list distance cutoff = 6
+  ghost atom cutoff = 8
+  binsize = 3, bins = 14 14 14
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair dpd, perpetual, skip from (3)
+      attributes: half, newton on
+      pair build: skip
+      stencil: none
+      bin: none
+  (2) pair srp, perpetual, skip from (3)
+      attributes: half, newton on
+      pair build: skip
+      stencil: none
+      bin: none
+  (3) neighbor class addition, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : lj
+  Current step  : 0
+  Time step     : 0.04
+Removed/inserted 0/8918 bond particles. (src/USER-MISC/fix_srp.cpp:257)
+Per MPI rank memory allocation (min/avg/max) = 169.4 | 172.1 | 175.9 Mbytes
+Step Temp Press Density 
+       0    1.0217262    23.384466    3.0180075 
+    1000    1.0218319     23.48439    3.0180075 
+    2000    1.0190674    23.486262    3.0180075 
+    3000    1.0185903    23.478977    3.0180075 
+    4000     1.024343    23.483325    3.0180075 
+    5000    1.0212016    23.477914    3.0180075 
+    6000    1.0237846    23.479629    3.0180075 
+    7000    1.0235632    23.483048    3.0180075 
+    8000    1.0180137    23.464973    3.0180075 
+    9000    1.0232061    23.488816    3.0180075 
+   10000    1.0217575    23.494347    3.0180075 
+   11000    1.0241103    23.467018    3.0180075 
+   12000    1.0194971    23.457945    3.0180075 
+   13000    1.0203242    23.477425    3.0180075 
+   14000    1.0272804    23.487096    3.0180075 
+   15000     1.023778    23.484861    3.0180075 
+   16000    1.0206498    23.451488    3.0180075 
+   17000    1.0220391    23.504527    3.0180075 
+   18000    1.0190558    23.446726    3.0180075 
+   19000     1.020321    23.480714    3.0180075 
+   20000     1.022482    23.466703    3.0180075 
+   21000    1.0210587    23.466063    3.0180075 
+   22000    1.0188181    23.479808    3.0180075 
+   23000    1.0220975    23.492657    3.0180075 
+   24000    1.0209055    23.454507    3.0180075 
+   25000    1.0212472     23.48771    3.0180075 
+   26000    1.0186801    23.480007    3.0180075 
+   27000    1.0219951    23.486662    3.0180075 
+   28000     1.022359    23.476144    3.0180075 
+   29000    1.0211431    23.462116    3.0180075 
+   30000    1.0198891    23.465256    3.0180075 
+   31000    1.0215014     23.48133    3.0180075 
+   32000    1.0190844    23.467426    3.0180075 
+   33000     1.024733    23.511548    3.0180075 
+   34000    1.0213744    23.470943    3.0180075 
+   35000    1.0223823    23.451679    3.0180075 
+   36000     1.023158    23.484605    3.0180075 
+   37000    1.0186384    23.469855    3.0180075 
+   38000    1.0237377     23.47632    3.0180075 
+   39000    1.0178401    23.469044    3.0180075 
+   40000    1.0196216     23.45487    3.0180075 
+   41000    1.0217423    23.487341    3.0180075 
+   42000    1.0196752    23.433472    3.0180075 
+   43000    1.0199303    23.447377    3.0180075 
+   44000    1.0220424    23.473441    3.0180075 
+   45000    1.0221181      23.4786    3.0180075 
+   46000     1.021464    23.495566    3.0180075 
+   47000    1.0194668    23.449638    3.0180075 
+   48000    1.0196974     23.48009    3.0180075 
+   49000    1.0200143    23.450556    3.0180075 
+   50000    1.0215247    23.458181    3.0180075 
+   51000    1.0172671     23.45665    3.0180075 
+   52000    1.0190094    23.457975    3.0180075 
+   53000    1.0212438    23.461893    3.0180075 
+   54000    1.0216992    23.476546    3.0180075 
+   55000    1.0214771    23.479583    3.0180075 
+   56000    1.0183153    23.483361    3.0180075 
+   57000    1.0217958    23.488204    3.0180075 
+   58000    1.0221128    23.451032    3.0180075 
+   59000    1.0164878    23.467099    3.0180075 
+   60000    1.0168886    23.452486    3.0180075 
+   61000    1.0228821    23.485049    3.0180075 
+   62000    1.0223284    23.473468    3.0180075 
+   63000    1.0249827    23.470956    3.0180075 
+   64000    1.0222863    23.458516    3.0180075 
+   65000    1.0219991    23.468568    3.0180075 
+   66000    1.0233101    23.474543    3.0180075 
+   67000    1.0212202    23.468682    3.0180075 
+   68000     1.020763    23.472281    3.0180075 
+   69000     1.021652     23.48328    3.0180075 
+   70000    1.0176855    23.451753    3.0180075 
+   71000    1.0203866    23.462491    3.0180075 
+   72000     1.018977    23.464338    3.0180075 
+   73000    1.0224354    23.477395    3.0180075 
+   74000    1.0183284    23.492911    3.0180075 
+   75000    1.0205621    23.476628    3.0180075 
+
+============================================
+
+        Job resource usage summary 
+
+                 Memory (GB)    NCPUs
+ Requested  :        16            16
+ Used       :         6 (peak)  16.00 (ave)
+
+============================================

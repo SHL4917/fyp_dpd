@@ -1,0 +1,51 @@
+variable		p equal 400
+variable		s equal 5
+variable		d equal $p*$s
+
+units			lj
+comm_modify		vel yes
+atom_style		atomic
+pair_style		dpd 1 1 22445
+neighbor		2 bin
+neigh_modify	every 1 delay 0 check yes one 3000
+
+timestep		0.04
+
+region			box block 0 10 0 10 0 10 units box
+create_box		1 box
+create_atoms	1 random 3000 696969 box
+
+mass			1 1
+
+velocity		all create 1 6969
+pair_coeff		1 1 25 3 1
+
+fix				1 all nvt temp 1 1 4
+
+reset_timestep	0
+run				10000
+
+reset_timestep	0
+thermo 			$d
+
+variable		pxy equal pxy
+variable		pxz equal pxz
+variable 		pyz	equal pyz
+
+fix				ss all ave/correlate $s $p $d v_pxy v_pxz v_pyz type auto
+
+# Index the 3rd column of fix onwards, 1st column is time delta, 2nd column is no. of samples
+variable		scale equal vol*$s*dt
+variable		vxy equal trap(f_ss[3])*${scale}
+variable		vxz equal trap(f_ss[4])*${scale}
+variable		vyz equal trap(f_ss[5])*${scale}
+
+
+thermo_style	custom step temp press density v_vxy v_vxz v_vyz
+
+fix				print all ave/time 1 1 $d v_vxy file vxy.txt
+fix				print all ave/time 1 1 $d v_vxz file vxz.txt
+fix				print all ave/time 1 1 $d v_vyz file vyz.txt
+
+run				800000
+

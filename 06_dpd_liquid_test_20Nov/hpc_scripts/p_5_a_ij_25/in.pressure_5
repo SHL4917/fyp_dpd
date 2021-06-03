@@ -1,0 +1,55 @@
+units		lj
+timestep	0.04
+comm_modify	vel yes
+atom_style	dpd
+pair_style	dpd/fdt 1 1 22445
+neighbor	5 bin
+neigh_modify	every 2
+
+lattice		sc 2.7
+region		box block 0 10 0 10 0 10 units box
+create_box	1 box
+create_atoms	1 box
+
+mass		1 1
+velocity	all ramp vx 0.0 1.5 z 0 10
+
+pair_coeff	1 1 25 3 1
+
+fix		nve all nve
+
+run		100000
+
+unfix		nve
+
+change_box	all triclinic
+fix		1 all npt temp 1 1 4 z 5 5 40
+fix		2 all deform 1 xz erate 0.15 remap v
+
+thermo_style	custom step temp press density vol
+thermo		1000
+
+run		50000
+
+compute		temp all temp
+variable	avetemp equal c_temp
+fix		avtemp all ave/time 50 200 10000 v_avetemp file avtemp.txt
+
+compute		pressure all pressure temp
+variable	avepressure equal c_pressure
+fix		avpressure all ave/time 50 200 10000 v_avepressure file avpressure.txt
+
+compute		chunk_vx all chunk/atom bin/1d z center 0.1 units reduced
+fix		velo_profile_vx all ave/chunk 50 200 10000 chunk_vx vx file velo_profile_vx.txt
+
+variable	pxz equal pxz
+fix		press_xz all ave/time 50 200 10000 v_pxz file press_xz.txt
+
+variable	dense equal density
+fix		density all ave/time 50 200 10000 v_dense file density.txt
+
+reset_timestep	0
+run		800000
+
+
+

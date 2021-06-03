@@ -1,0 +1,30 @@
+# mpiexec: MPI is /apps/mpi/intel/2019.6.166
+# mpiexec: No RDMA network found -- using sockets+shared memory
+# mpiexec: bootstrapping with /apps/mpi/intel/2019.6.166/bin/__pbs_tmrsh
+# mpiexec: full path to program is /apps/lammps/19Mar2020/bin/lmp
+# mpiexec: program arguments are: -i in.viscosity -v r_c
+# mpiexec: 8 ranks allocated via PBS select
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has shared use of the allocated nodes. Disabling process-pinning
+# mpiexec: machinefile configured as:
+cx3-1-15.cx3.hpc.ic.ac.uk:8
+#
+# mpiexec: Checking all nodes are ONLINE:
+# mpiexec: All nodes appear ONLINE
+# mpiexec: launch started at Sun  6 Dec 16:18:27 GMT 2020
+# mpiexec: launching program...
+# /apps/lammps/19Mar2020/bin/lmp -i in.viscosity -v r_c
+(cx3-1-15.cx3.hpc.ic.ac.uk:0,1,2,3,4,5,6,7)
+
+ERROR: Invalid command-line argument (src/lammps.cpp:359)
+# mpiexec: finished at Sun  6 Dec 16:18:30 GMT 2020
+
+============================================
+
+        Job resource usage summary 
+
+                 Memory (GB)    NCPUs
+ Requested  :         8             8
+ Used       :         0 (peak)   1.66 (ave)
+
+============================================

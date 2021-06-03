@@ -1,0 +1,297 @@
+# mpiexec: MPI is /apps/mpi/intel/2019.6.166
+# mpiexec: No RDMA network found -- using sockets+shared memory
+# mpiexec: bootstrapping with /apps/mpi/intel/2019.6.166/bin/__pbs_tmrsh
+# mpiexec: full path to program is /apps/lammps/19Mar2020/bin/lmp
+# mpiexec: program arguments are: -i in.polymer_test
+# mpiexec: 16 ranks allocated via PBS select
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has shared use of the allocated nodes. Disabling process-pinning
+# mpiexec: machinefile configured as:
+cx3-7-21.cx3.hpc.ic.ac.uk:16
+#
+# mpiexec: Checking all nodes are ONLINE:
+# mpiexec: All nodes appear ONLINE
+# mpiexec: launch started at Mon 11 Jan 12:00:52 GMT 2021
+# mpiexec: launching program...
+# /apps/lammps/19Mar2020/bin/lmp -i in.polymer_test
+(cx3-7-21.cx3.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15)
+
+LAMMPS (19 Mar 2020)
+  using 1 OpenMP thread(s) per MPI task
+Reading data file ...
+  orthogonal box = (0 0 0) to (40 40 40)
+  2 by 2 by 4 MPI processor grid
+  reading atoms ...
+  192000 atoms
+  scanning bonds ...
+  1 = max bonds/atom
+  reading bonds ...
+  8400 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          0          0         
+  special bond factors coul: 0          0          0         
+  2 = max # of 1-2 neighbors
+  2 = max # of 1-3 neighbors
+  4 = max # of 1-4 neighbors
+  6 = max # of special neighbors
+  special bonds CPU = 0.00826067 secs
+  read_data CPU = 0.219637 secs
+9600 atoms in group polymer
+Using type 4 for bond particles
+Thermo normalization turned off by pair srp (src/USER-MISC/pair_srp.cpp:498)
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 3000, page size: 100000
+  master list distance cutoff = 6
+  ghost atom cutoff = 8
+  binsize = 3, bins = 14 14 14
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair dpd, perpetual, skip from (3)
+      attributes: half, newton on
+      pair build: skip
+      stencil: none
+      bin: none
+  (2) pair srp, perpetual, skip from (3)
+      attributes: half, newton on
+      pair build: skip
+      stencil: none
+      bin: none
+  (3) neighbor class addition, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : lj
+  Current step  : 0
+  Time step     : 0.04
+Removed/inserted 0/8400 bond particles. (src/USER-MISC/fix_srp.cpp:257)
+Per MPI rank memory allocation (min/avg/max) = 152.8 | 166.1 | 183 Mbytes
+Step Temp E_pair E_mol TotEng Press 
+       0            1    719759.01    324.36732    1008081.9    21.960667 
+   10000    1.0238082    855963.53    4287.1642    1155105.9    23.716987 
+Deleted 8400 atoms, new total = 192000
+Loop time of 3139.02 on 16 procs for 10000 steps with 192000 atoms
+
+Performance: 11009.791 tau/day, 3.186 timesteps/s
+99.2% CPU use with 16 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 1033.7     | 1113.2     | 1537.2     | 421.9 | 35.46
+Bond    | 0.1235     | 0.15416    | 0.2049     |   6.6 |  0.00
+Neigh   | 1291.6     | 1292.5     | 1293       |   1.1 | 41.17
+Comm    | 290.73     | 624.32     | 792.23     | 605.4 | 19.89
+Output  | 0.00012719 | 0.00013526 | 0.00016446 |   0.0 |  0.00
+Modify  | 13.661     | 104.03     | 246.98     | 952.1 |  3.31
+Other   |            | 4.859      |            |       |  0.15
+
+Nlocal:    12000 ave 12075 max 11916 min
+Histogram: 2 0 0 1 3 4 4 0 0 2
+Nghost:    89092.6 ave 89257 max 88987 min
+Histogram: 3 1 5 0 1 2 2 1 0 1
+Neighs:    1.6279e+07 ave 1.66605e+07 max 1.58725e+07 min
+Histogram: 3 1 1 1 1 1 2 2 2 2
+
+Total # of neighbors = 260464603
+Ave neighs/atom = 1356.59
+Ave special neighs/atom = 0.225
+Neighbor list builds = 650
+Dangerous builds = 0
+WARNING: New thermo_style command, previous thermo_modify settings will be lost (src/output.cpp:708)
+Using type 4 for bond particles
+Thermo normalization turned off by pair srp (src/USER-MISC/pair_srp.cpp:498)
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 3000, page size: 100000
+  master list distance cutoff = 6
+  ghost atom cutoff = 8
+  binsize = 3, bins = 14 14 14
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair dpd, perpetual, skip from (3)
+      attributes: half, newton on
+      pair build: skip
+      stencil: none
+      bin: none
+  (2) pair srp, perpetual, skip from (3)
+      attributes: half, newton on
+      pair build: skip
+      stencil: none
+      bin: none
+  (3) neighbor class addition, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : lj
+  Current step  : 0
+  Time step     : 0.04
+Removed/inserted 0/8400 bond particles. (src/USER-MISC/fix_srp.cpp:257)
+Per MPI rank memory allocation (min/avg/max) = 169.1 | 172.3 | 176.3 Mbytes
+Step Temp Press Density 
+       0    1.0238082    23.595608      2.99895 
+    1000    1.0243792    23.679934      2.99895 
+    2000    1.0226322    23.687933      2.99895 
+    3000    1.0246955    23.682755      2.99895 
+    4000    1.0183456    23.665793      2.99895 
+    5000    1.0190952    23.667694      2.99895 
+    6000    1.0237063    23.651758      2.99895 
+    7000    1.0205927    23.670412      2.99895 
+    8000    1.0218784    23.663749      2.99895 
+    9000    1.0226924    23.680831      2.99895 
+   10000     1.021277    23.651803      2.99895 
+   11000    1.0228303    23.658827      2.99895 
+   12000    1.0202621    23.639893      2.99895 
+   13000    1.0220748    23.660517      2.99895 
+   14000    1.0233175    23.655858      2.99895 
+   15000    1.0242498    23.657128      2.99895 
+   16000    1.0193959     23.65121      2.99895 
+   17000    1.0239159    23.647711      2.99895 
+   18000    1.0238231     23.65564      2.99895 
+   19000    1.0208302    23.648178      2.99895 
+   20000    1.0218318    23.626238      2.99895 
+   21000    1.0223343     23.65358      2.99895 
+   22000    1.0204331    23.642114      2.99895 
+   23000    1.0213736    23.621097      2.99895 
+   24000    1.0224887    23.634626      2.99895 
+   25000    1.0220069    23.666915      2.99895 
+   26000     1.019161    23.626201      2.99895 
+   27000    1.0200657    23.652747      2.99895 
+   28000    1.0212013     23.64207      2.99895 
+   29000    1.0179943    23.637852      2.99895 
+   30000    1.0250484    23.627428      2.99895 
+   31000    1.0233786    23.620341      2.99895 
+   32000    1.0238698    23.661972      2.99895 
+   33000    1.0194742     23.58921      2.99895 
+   34000    1.0211947    23.627846      2.99895 
+   35000    1.0228059    23.647665      2.99895 
+   36000    1.0235259    23.647778      2.99895 
+   37000    1.0229536    23.638657      2.99895 
+   38000    1.0224602    23.629385      2.99895 
+   39000    1.0224354    23.647192      2.99895 
+   40000    1.0192869    23.626988      2.99895 
+   41000    1.0240819    23.619021      2.99895 
+   42000    1.0199608    23.624038      2.99895 
+   43000    1.0205468    23.625292      2.99895 
+   44000    1.0193486    23.616792      2.99895 
+   45000    1.0251397    23.652434      2.99895 
+   46000    1.0206781    23.639692      2.99895 
+   47000     1.019939    23.592314      2.99895 
+   48000    1.0219745    23.615963      2.99895 
+   49000    1.0196837    23.620126      2.99895 
+   50000    1.0221322    23.637904      2.99895 
+   51000    1.0254916     23.64674      2.99895 
+   52000    1.0244503    23.618452      2.99895 
+   53000    1.0174358    23.611464      2.99895 
+   54000    1.0221795    23.611906      2.99895 
+   55000    1.0158519    23.590958      2.99895 
+   56000     1.022751    23.625081      2.99895 
+   57000    1.0200855    23.629043      2.99895 
+   58000    1.0222019    23.611291      2.99895 
+   59000    1.0238955    23.624514      2.99895 
+   60000    1.0252702    23.632744      2.99895 
+   61000     1.023682    23.626504      2.99895 
+   62000    1.0220908    23.642132      2.99895 
+   63000    1.0253891    23.621848      2.99895 
+   64000    1.0199679    23.599829      2.99895 
+   65000    1.0223671    23.628054      2.99895 
+   66000    1.0183335    23.612554      2.99895 
+   67000    1.0228994    23.594412      2.99895 
+   68000    1.0228487     23.62967      2.99895 
+   69000    1.0214214    23.609451      2.99895 
+   70000    1.0232342    23.619434      2.99895 
+   71000    1.0205149    23.626244      2.99895 
+   72000    1.0222642     23.64792      2.99895 
+   73000    1.0235386    23.623523      2.99895 
+   74000    1.0234886    23.625028      2.99895 
+   75000    1.0250297    23.635458      2.99895 
+   76000    1.0219504    23.622745      2.99895 
+   77000    1.0227905    23.647297      2.99895 
+   78000      1.02285    23.611168      2.99895 
+   79000    1.0230942    23.609744      2.99895 
+   80000    1.0241287    23.635993      2.99895 
+   81000    1.0201854       23.625      2.99895 
+   82000    1.0222681    23.633393      2.99895 
+   83000    1.0223254    23.625939      2.99895 
+   84000    1.0206909    23.614508      2.99895 
+   85000    1.0208812    23.608027      2.99895 
+   86000    1.0207827    23.601056      2.99895 
+   87000    1.0193055    23.617971      2.99895 
+   88000    1.0213027    23.627428      2.99895 
+   89000     1.023211    23.589908      2.99895 
+   90000    1.0201563    23.617542      2.99895 
+   91000    1.0235303    23.608542      2.99895 
+   92000    1.0244251    23.614423      2.99895 
+   93000    1.0201979    23.601807      2.99895 
+   94000    1.0200979    23.621856      2.99895 
+   95000    1.0224578    23.612318      2.99895 
+   96000    1.0211054    23.627988      2.99895 
+   97000    1.0226231    23.605126      2.99895 
+   98000    1.0213825    23.622843      2.99895 
+   99000     1.021615    23.620841      2.99895 
+  100000    1.0197938     23.63016      2.99895 
+  101000    1.0204414    23.613918      2.99895 
+  102000    1.0212769    23.604363      2.99895 
+  103000    1.0198452    23.614199      2.99895 
+  104000    1.0236116    23.590142      2.99895 
+  105000    1.0243237    23.617724      2.99895 
+  106000    1.0260398    23.626766      2.99895 
+  107000    1.0200566    23.615817      2.99895 
+  108000     1.020938    23.611801      2.99895 
+  109000    1.0228105    23.622406      2.99895 
+  110000    1.0199051    23.591516      2.99895 
+  111000    1.0221045    23.652383      2.99895 
+  112000     1.023629    23.622223      2.99895 
+  113000    1.0191201    23.592241      2.99895 
+  114000     1.020455    23.611271      2.99895 
+  115000    1.0207897    23.621628      2.99895 
+  116000     1.021798    23.607951      2.99895 
+  117000     1.019183    23.608036      2.99895 
+  118000    1.0238755    23.625531      2.99895 
+  119000    1.0240869    23.618999      2.99895 
+  120000    1.0208627    23.619758      2.99895 
+  121000    1.0228922    23.621958      2.99895 
+  122000    1.0215846    23.610008      2.99895 
+  123000    1.0205214    23.596935      2.99895 
+  124000    1.0212077    23.601077      2.99895 
+  125000      1.02084    23.603821      2.99895 
+  126000    1.0261418    23.621118      2.99895 
+  127000    1.0200689    23.607671      2.99895 
+  128000    1.0209787     23.62488      2.99895 
+  129000    1.0155472    23.608046      2.99895 
+  130000    1.0207308    23.597109      2.99895 
+  131000    1.0237408    23.635164      2.99895 
+  132000    1.0205256    23.607808      2.99895 
+  133000    1.0231886    23.628607      2.99895 
+  134000    1.0204537    23.579484      2.99895 
+  135000     1.023248    23.602168      2.99895 
+  136000    1.0209263    23.617592      2.99895 
+  137000    1.0222078    23.600063      2.99895 
+  138000    1.0203982    23.613264      2.99895 
+  139000    1.0255471    23.606289      2.99895 
+  140000    1.0237869     23.63216      2.99895 
+  141000    1.0216601    23.598459      2.99895 
+  142000     1.023813    23.610984      2.99895 
+  143000    1.0233923    23.595952      2.99895 
+  144000    1.0203501     23.62617      2.99895 
+  145000    1.0197328    23.620111      2.99895 
+  146000       1.0279    23.626869      2.99895 
+  147000    1.0198874    23.599361      2.99895 
+  148000    1.0201894    23.612107      2.99895 
+  149000    1.0211357    23.603829      2.99895 
+  150000    1.0213542    23.616177      2.99895 
+  151000     1.024604    23.624407      2.99895 
+  152000    1.0196911    23.637258      2.99895 
+  153000    1.0245531    23.608015      2.99895 
+
+============================================
+
+        Job resource usage summary 
+
+                 Memory (GB)    NCPUs
+ Requested  :         8            16
+ Used       :         6 (peak)  16.01 (ave)
+
+============================================

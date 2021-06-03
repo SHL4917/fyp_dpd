@@ -1,0 +1,234 @@
+# mpiexec: MPI is /apps/mpi/intel/2019.6.166
+# mpiexec: No RDMA network found -- using sockets+shared memory
+# mpiexec: bootstrapping with /apps/mpi/intel/2019.6.166/bin/__pbs_tmrsh
+# mpiexec: full path to program is /apps/lammps/19Mar2020/bin/lmp
+# mpiexec: program arguments are: -i in.polymer_test
+# mpiexec: 16 ranks allocated via PBS select
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has shared use of the allocated nodes. Disabling process-pinning
+# mpiexec: machinefile configured as:
+cx3-6-18.cx3.hpc.ic.ac.uk:16
+#
+# mpiexec: Checking all nodes are ONLINE:
+# mpiexec: All nodes appear ONLINE
+# mpiexec: launch started at Wed 20 Jan 16:28:41 GMT 2021
+# mpiexec: launching program...
+# /apps/lammps/19Mar2020/bin/lmp -i in.polymer_test
+(cx3-6-18.cx3.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15)
+
+LAMMPS (19 Mar 2020)
+  using 1 OpenMP thread(s) per MPI task
+Reading data file ...
+  orthogonal box = (0 0 0) to (40 40 40)
+  2 by 2 by 4 MPI processor grid
+  reading atoms ...
+  192000 atoms
+  scanning bonds ...
+  1 = max bonds/atom
+  reading bonds ...
+  8000 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          0          0         
+  special bond factors coul: 0          0          0         
+  2 = max # of 1-2 neighbors
+  2 = max # of 1-3 neighbors
+  3 = max # of 1-4 neighbors
+  5 = max # of special neighbors
+  special bonds CPU = 0.00645031 secs
+  read_data CPU = 0.372632 secs
+9600 atoms in group polymer
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 3000, page size: 100000
+  master list distance cutoff = 6
+  ghost atom cutoff = 8
+  binsize = 3, bins = 14 14 14
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair dpd, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : lj
+  Current step  : 0
+  Time step     : 0.04
+Per MPI rank memory allocation (min/avg/max) = 87.6 | 96.12 | 106.3 Mbytes
+Step Temp E_pair E_mol TotEng Press 
+       0            1     3.507002  0.006783791     5.013778    20.651461 
+   10000    1.0230955    4.3739298 0.0076776437    5.9162427    23.282772 
+Loop time of 2941.65 on 16 procs for 10000 steps with 192000 atoms
+
+Performance: 11748.527 tau/day, 3.399 timesteps/s
+98.9% CPU use with 16 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 1250.4     | 1400.4     | 1549.5     | 267.4 | 47.60
+Bond    | 0.37942    | 0.43413    | 0.48078    |   4.3 |  0.01
+Neigh   | 778.44     | 778.7      | 778.96     |   0.5 | 26.47
+Comm    | 519.43     | 707.91     | 869.9      | 414.2 | 24.06
+Output  | 0.00024299 | 0.00025565 | 0.00027493 |   0.0 |  0.00
+Modify  | 12.682     | 49.385     | 103.02     | 470.5 |  1.68
+Other   |            | 4.856      |            |       |  0.17
+
+Nlocal:    12000 ave 12060 max 11948 min
+Histogram: 2 0 0 3 5 2 2 1 0 1
+Nghost:    89063.8 ave 89176 max 88972 min
+Histogram: 1 1 3 5 0 1 3 0 1 1
+Neighs:    1.62796e+07 ave 1.66752e+07 max 1.58186e+07 min
+Histogram: 1 2 1 1 2 2 1 3 1 2
+
+Total # of neighbors = 260473295
+Ave neighs/atom = 1356.63
+Ave special neighs/atom = 0.2
+Neighbor list builds = 654
+Dangerous builds = 0
+Setting up Verlet run ...
+  Unit style    : lj
+  Current step  : 0
+  Time step     : 0.04
+Per MPI rank memory allocation (min/avg/max) = 101.2 | 103.2 | 107.3 Mbytes
+Step Temp Press Density 
+       0    1.0230955    23.180097        3.018 
+    1000    1.0231256    23.286807        3.018 
+    2000    1.0230399     23.28345        3.018 
+    3000    1.0228452    23.277854        3.018 
+    4000    1.0202855    23.276864        3.018 
+    5000    1.0210742    23.270576        3.018 
+    6000    1.0254251    23.288435        3.018 
+    7000    1.0220444    23.274654        3.018 
+    8000    1.0197424    23.269197        3.018 
+    9000    1.0197689    23.274054        3.018 
+   10000    1.0215868    23.245859        3.018 
+   11000    1.0220386    23.292243        3.018 
+   12000    1.0216715    23.290134        3.018 
+   13000    1.0200054    23.251481        3.018 
+   14000    1.0215036    23.276757        3.018 
+   15000    1.0220804    23.271887        3.018 
+   16000    1.0214672     23.27702        3.018 
+   17000    1.0193031    23.259046        3.018 
+   18000    1.0223302    23.278985        3.018 
+   19000    1.0209259    23.266247        3.018 
+   20000     1.021994    23.278224        3.018 
+   21000    1.0216803    23.283115        3.018 
+   22000    1.0238288    23.278602        3.018 
+   23000    1.0198523    23.263209        3.018 
+   24000    1.0252517    23.294764        3.018 
+   25000    1.0230986    23.277248        3.018 
+   26000    1.0220179    23.302909        3.018 
+   27000    1.0208295    23.288985        3.018 
+   28000    1.0262764    23.277711        3.018 
+   29000    1.0236689    23.294209        3.018 
+   30000    1.0229778    23.272243        3.018 
+   31000    1.0184843    23.257281        3.018 
+   32000    1.0209736    23.279749        3.018 
+   33000    1.0247069    23.265678        3.018 
+   34000    1.0212959    23.248029        3.018 
+   35000    1.0222947    23.292303        3.018 
+   36000    1.0234098    23.306222        3.018 
+   37000    1.0217907    23.278122        3.018 
+   38000    1.0229721    23.276385        3.018 
+   39000    1.0238628    23.286727        3.018 
+   40000    1.0206507    23.293558        3.018 
+   41000    1.0217363    23.266392        3.018 
+   42000     1.021708    23.276605        3.018 
+   43000    1.0228555    23.296657        3.018 
+   44000    1.0229355    23.285278        3.018 
+   45000    1.0213414    23.267422        3.018 
+   46000    1.0195436    23.253706        3.018 
+   47000    1.0182887     23.25579        3.018 
+   48000    1.0236284    23.276548        3.018 
+   49000    1.0166956    23.267771        3.018 
+   50000    1.0223044    23.291791        3.018 
+   51000    1.0235745    23.285716        3.018 
+   52000    1.0192465    23.279241        3.018 
+   53000     1.019733    23.279977        3.018 
+   54000    1.0234886    23.277212        3.018 
+   55000    1.0215471    23.261545        3.018 
+   56000    1.0203187    23.263667        3.018 
+   57000    1.0206134     23.26662        3.018 
+   58000    1.0217144    23.256684        3.018 
+   59000    1.0191101     23.26983        3.018 
+   60000    1.0200941    23.247046        3.018 
+   61000     1.025083    23.299169        3.018 
+   62000    1.0239784    23.297647        3.018 
+   63000    1.0211342    23.273929        3.018 
+   64000    1.0226938    23.282764        3.018 
+   65000    1.0203963    23.275284        3.018 
+   66000    1.0210909    23.286982        3.018 
+   67000    1.0195195    23.277299        3.018 
+   68000    1.0248297    23.245784        3.018 
+   69000    1.0248242    23.304898        3.018 
+   70000    1.0198544    23.259919        3.018 
+   71000    1.0172843    23.269453        3.018 
+   72000    1.0239176    23.289128        3.018 
+   73000    1.0226957    23.301398        3.018 
+   74000    1.0190738    23.281259        3.018 
+   75000    1.0200193    23.290802        3.018 
+   76000    1.0222668    23.278319        3.018 
+   77000    1.0259406    23.253786        3.018 
+   78000     1.023462    23.289424        3.018 
+   79000     1.022238    23.266931        3.018 
+   80000    1.0237862    23.288441        3.018 
+   81000    1.0235652    23.280938        3.018 
+   82000    1.0221276    23.302812        3.018 
+   83000    1.0258189    23.284432        3.018 
+   84000    1.0201397    23.272449        3.018 
+   85000      1.02007    23.272961        3.018 
+   86000     1.022052    23.279516        3.018 
+   87000    1.0238902    23.292828        3.018 
+   88000    1.0220372     23.26411        3.018 
+   89000    1.0210265    23.259192        3.018 
+   90000    1.0217475     23.25466        3.018 
+   91000    1.0229516    23.272587        3.018 
+   92000    1.0194651       23.261        3.018 
+   93000    1.0202697    23.279049        3.018 
+   94000    1.0214462    23.242977        3.018 
+   95000    1.0186301    23.297863        3.018 
+   96000    1.0215897    23.300173        3.018 
+   97000    1.0225305    23.290544        3.018 
+   98000    1.0207809    23.280827        3.018 
+   99000    1.0229783     23.26283        3.018 
+  100000    1.0196654    23.270908        3.018 
+Loop time of 28831.3 on 16 procs for 100000 steps with 192000 atoms
+
+Performance: 11986.977 tau/day, 3.468 timesteps/s
+99.1% CPU use with 16 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 11583      | 13021      | 14706      | 998.5 | 45.16
+Bond    | 3.8864     | 4.1674     | 4.4826     |   9.5 |  0.01
+Neigh   | 7754.1     | 7757.2     | 7762.5     |   2.8 | 26.91
+Comm    | 5509       | 7410.4     | 9047       |1382.4 | 25.70
+Output  | 9.0728     | 9.0743     | 9.0775     |   0.0 |  0.03
+Modify  | 203.22     | 580.9      | 1376.4     |1924.3 |  2.01
+Other   |            | 48.23      |            |       |  0.17
+
+Nlocal:    12000 ave 12065 max 11947 min
+Histogram: 2 1 2 3 1 3 1 2 0 1
+Nghost:    89097.8 ave 89188 max 89005 min
+Histogram: 1 1 2 2 1 2 3 2 0 2
+Neighs:    1.62792e+07 ave 1.67209e+07 max 1.59266e+07 min
+Histogram: 3 2 0 2 2 2 1 1 2 1
+
+Total # of neighbors = 260467567
+Ave neighs/atom = 1356.6
+Ave special neighs/atom = 0.2
+Neighbor list builds = 6503
+Dangerous builds = 0
+Total wall time: 8:49:35
+# mpiexec: finished at Thu 21 Jan 01:18:25 GMT 2021
+
+============================================
+
+        Job resource usage summary 
+
+                 Memory (GB)    NCPUs
+ Requested  :        16            16
+ Used       :         4 (peak)  16.00 (ave)
+
+============================================

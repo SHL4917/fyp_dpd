@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "micelle_analysis.py", line 38, in <module>
+    folder = folder.split("_")[0]
+NameError: name 'folder' is not defined

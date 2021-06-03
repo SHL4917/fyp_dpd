@@ -1,0 +1,116 @@
+# mpiexec: MPI is /apps/mpi/intel/2019.6.166
+# mpiexec: No RDMA network found -- using sockets+shared memory
+# mpiexec: bootstrapping with /apps/mpi/intel/2019.6.166/bin/__pbs_tmrsh
+# mpiexec: full path to program is /apps/lammps/19Mar2020/bin/lmp
+# mpiexec: program arguments are: -i in.diffusion_vacf -v rng 32398
+# mpiexec: 8 ranks allocated via PBS select
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has shared use of the allocated nodes. Disabling process-pinning
+# mpiexec: machinefile configured as:
+cx3-7-5.cx3.hpc.ic.ac.uk:8
+#
+# mpiexec: Checking all nodes are ONLINE:
+# mpiexec: All nodes appear ONLINE
+# mpiexec: launch started at Tue  1 Dec 10:39:55 GMT 2020
+# mpiexec: launching program...
+# /apps/lammps/19Mar2020/bin/lmp -i in.diffusion_vacf -v rng 32398
+(cx3-7-5.cx3.hpc.ic.ac.uk:0,1,2,3,4,5,6,7)
+
+LAMMPS (19 Mar 2020)
+  using 1 OpenMP thread(s) per MPI task
+Created orthogonal box = (0 0 0) to (10 10 10)
+  2 by 2 by 2 MPI processor grid
+Created 3000 atoms
+  create_atoms CPU = 0.00101033 secs
+Neighbor list info ...
+  update every 2 steps, delay 10 steps, check yes
+  max neighbors/atom: 3000, page size: 100000
+  master list distance cutoff = 6
+  ghost atom cutoff = 6
+  binsize = 3, bins = 4 4 4
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair dpd, perpetual
+      attributes: half, newton on
+      pair build: half/bin/atomonly/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : lj
+  Current step  : 0
+  Time step     : 0.04
+Per MPI rank memory allocation (min/avg/max) = 5.514 | 5.794 | 5.9 Mbytes
+Step Temp E_pair E_mol TotEng Press 
+       0            1    7.8733454            0    9.3728454     26.68939 
+   10000   0.99463607    4.5825008            0    6.0739576    23.691625 
+Loop time of 43.6627 on 8 procs for 10000 steps with 3000 atoms
+
+Performance: 791522.424 tau/day, 229.028 timesteps/s
+99.4% CPU use with 8 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 19.796     | 21.772     | 23.331     |  26.1 | 49.86
+Neigh   | 5.6762     | 5.9445     | 6.135      |   6.3 | 13.61
+Comm    | 13.478     | 15.24      | 17.546     |  36.0 | 34.90
+Output  | 0.00019923 | 0.00024333 | 0.00053887 |   0.0 |  0.00
+Modify  | 0.2948     | 0.37767    | 0.4431     |  10.2 |  0.86
+Other   |            | 0.3287     |            |       |  0.75
+
+Nlocal:    375 ave 381 max 369 min
+Histogram: 2 0 0 2 0 0 2 0 0 2
+Nghost:    14368.6 ave 14387 max 14347 min
+Histogram: 1 0 0 2 2 0 0 0 2 1
+Neighs:    508689 ave 557850 max 463401 min
+Histogram: 1 2 1 0 0 0 2 0 1 1
+
+Total # of neighbors = 4069509
+Ave neighs/atom = 1356.5
+Neighbor list builds = 477
+Dangerous builds = 0
+Setting up Verlet run ...
+  Unit style    : lj
+  Current step  : 0
+  Time step     : 0.04
+Per MPI rank memory allocation (min/avg/max) = 6.257 | 6.265 | 6.275 Mbytes
+Step Temp Press Density Volume 
+       0   0.99463607    23.586145            3         1000 
+     200   0.99673944    23.740814            3         1000 
+Loop time of 1.32891 on 8 procs for 200 steps with 3000 atoms
+
+Performance: 520126.129 tau/day, 150.499 timesteps/s
+96.1% CPU use with 8 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.39503    | 0.50865    | 0.61786    |  11.5 | 38.28
+Neigh   | 0.096885   | 0.10957    | 0.12341    |   2.7 |  8.24
+Comm    | 0.29187    | 0.55234    | 0.70495    |  17.8 | 41.56
+Output  | 0.00010399 | 0.0030173  | 0.0034358  |   2.0 |  0.23
+Modify  | 0.010498   | 0.055013   | 0.35681    |  48.6 |  4.14
+Other   |            | 0.1003     |            |       |  7.55
+
+Nlocal:    375 ave 386 max 368 min
+Histogram: 1 1 1 2 1 1 0 0 0 1
+Nghost:    14388.2 ave 14463 max 14332 min
+Histogram: 2 0 0 2 2 0 0 1 0 1
+Neighs:    508791 ave 547116 max 471899 min
+Histogram: 2 1 1 0 0 0 0 1 1 2
+
+Total # of neighbors = 4070328
+Ave neighs/atom = 1356.78
+Neighbor list builds = 8
+Dangerous builds = 0
+Total wall time: 0:00:45
+# mpiexec: finished at Tue  1 Dec 10:40:43 GMT 2020
+
+============================================
+
+        Job resource usage summary 
+
+                 Memory (GB)    NCPUs
+ Requested  :         8             8
+ Used       :         0 (peak)   6.54 (ave)
+
+============================================

@@ -1,0 +1,40 @@
+units			lj
+comm_modify		vel yes
+atom_style		dpd
+pair_style		dpd/fdt 1 1 22445
+neighbor		5.0 bin
+neigh_modify		every 2 one 3000
+timestep		0.04
+
+lattice			sc 2.7
+region			box block 0 10 0 10 0 10 units box
+create_box		1 box
+create_atoms		1 box
+
+mass			1 1
+velocity		all create 1 696969
+pair_coeff		1 1 50 3 1
+
+fix			1 all npt temp 1 1 4 z 24 24 40
+
+thermo_style		custom step temp press density vol
+thermo			1000
+
+reset_timestep		0
+run			50000
+
+reset_timestep		0
+unfix			1
+fix			2 all nvt temp 1 1 4
+
+variable		density equal density
+fix			dense all ave/time 200 1 200 v_density file density.txt
+
+
+compute         	vauto all vacf
+fix             	5 all vector 1 c_vauto[4]
+variable        	diff equal dt*trap(f_5)
+fix			diff all ave/time 1000 1 1000 v_diff file diffusion.txt
+
+
+run			500000

@@ -1,0 +1,35 @@
+variable		seed equal ${rng}
+
+units			lj
+comm_modify		vel yes
+atom_style		dpd
+pair_style		dpd/fdt 1 1 22445
+neighbor		5.0 bin
+neigh_modify		every 2 one 3000
+timestep		0.04
+
+region			box block 0 10 0 10 0 10 units box
+create_box		1 box
+create_atoms		1 random 3000 696969 box
+
+mass			1 1
+velocity		all create 1 ${seed}
+pair_coeff		1 1 50 3 1
+
+fix			1 all nvt temp 1 1 4
+
+reset_timestep		0
+run			25000
+reset_timestep		0
+
+thermo_style		custom step temp press density vol
+thermo			1000
+
+unfix			1
+fix			2 all nvt temp 1 1 4
+
+compute         	vauto all vacf
+fix			diff all ave/time 1 1 1 c_vauto[4] file vacf.txt
+
+run			100
+

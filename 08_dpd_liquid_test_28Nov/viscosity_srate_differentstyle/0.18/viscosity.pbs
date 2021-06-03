@@ -1,0 +1,11 @@
+#PBS -l walltime=12:00:00
+#PBS -l select=1:ncpus=8:mem=8gb
+
+module load lammps/19Mar2020
+module load intel-suite
+module load mpi
+
+cd $PBS_O_WORKDIR
+
+shearrate=$(<srate.txt)
+mpiexec lmp -i in.* -v shear_rate $shearrate

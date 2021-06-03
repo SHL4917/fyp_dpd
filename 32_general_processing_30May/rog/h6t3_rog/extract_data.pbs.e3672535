@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "micelle_analysis.py", line 56, in <module>
+    poly_coord = np.load(f"poly_coord_{filename}.npy")
+  File "/rds/general/user/shl4917/home/anaconda3/lib/python3.8/site-packages/numpy/lib/npyio.py", line 416, in load
+    fid = stack.enter_context(open(os_fspath(file), "rb"))
+FileNotFoundError: [Errno 2] No such file or directory: 'poly_coord_h6t3_rog.npy'

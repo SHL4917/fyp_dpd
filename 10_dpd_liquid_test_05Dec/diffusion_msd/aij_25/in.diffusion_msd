@@ -1,0 +1,34 @@
+units			lj
+comm_modify		vel yes
+atom_style		atomic
+pair_style		dpd 1 1 22445
+neighbor		5.0 bin
+neigh_modify		every 2 one 3000
+timestep		0.04
+
+region			box block 0 10 0 10 0 10 units box
+create_box		1 box
+create_atoms		1 random 3000 696969 box
+
+mass			1 1
+velocity		all create 1 66969
+pair_coeff		1 1 25 4.5 1
+
+fix			1 all nvt temp 1 1 4
+
+reset_timestep		0
+run			10000
+reset_timestep		0
+
+thermo_style		custom step temp press density vol
+thermo			1000
+
+unfix			1
+fix			2 all nvt temp 1 1 4
+
+compute			msd all msd com yes
+variable		msd_scalar equal c_msd[4]
+fix			msd_vec all ave/time 200 1 200 v_msd_scalar file msd_vec.txt
+
+run			100000
+

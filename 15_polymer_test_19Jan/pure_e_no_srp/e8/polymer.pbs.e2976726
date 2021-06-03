@@ -1,0 +1,2 @@
+=>> PBS: job killed: walltime 43232 exceeded limit 43200
+-bash: line 1: 1596181 Killed                  /var/spool/PBS/mom_priv/jobs/2976726.pbs.SC

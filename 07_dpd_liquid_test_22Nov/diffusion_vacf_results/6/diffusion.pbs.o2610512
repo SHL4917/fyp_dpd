@@ -1,0 +1,118 @@
+# mpiexec: MPI is /apps/mpi/intel/2019.6.166
+# mpiexec: No RDMA network found -- using sockets+shared memory
+# mpiexec: bootstrapping with /apps/mpi/intel/2019.6.166/bin/__pbs_tmrsh
+# mpiexec: full path to program is /apps/lammps/19Mar2020/bin/lmp
+# mpiexec: program arguments are: -i in.diffusion_vacf -v rng 8461
+# mpiexec: 6 ranks allocated via PBS select
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has shared use of the allocated nodes. Disabling process-pinning
+# mpiexec: machinefile configured as:
+cx3-1-10.cx3.hpc.ic.ac.uk:6
+#
+# mpiexec: Checking all nodes are ONLINE:
+# mpiexec: All nodes appear ONLINE
+# mpiexec: launch started at Wed 25 Nov 02:33:42 GMT 2020
+# mpiexec: launching program...
+# /apps/lammps/19Mar2020/bin/lmp -i in.diffusion_vacf -v rng 8461
+(cx3-1-10.cx3.hpc.ic.ac.uk:0,1,2,3,4,5)
+
+LAMMPS (19 Mar 2020)
+  using 1 OpenMP thread(s) per MPI task
+Created orthogonal box = (0 0 0) to (10 10 10)
+  2 by 1 by 3 MPI processor grid
+Created 3000 atoms
+  create_atoms CPU = 0.000515055 secs
+Neighbor list info ...
+  update every 2 steps, delay 10 steps, check yes
+  max neighbors/atom: 3000, page size: 100000
+  master list distance cutoff = 6
+  ghost atom cutoff = 6
+  binsize = 3, bins = 4 4 4
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair dpd/fdt, perpetual
+      attributes: half, newton on
+      pair build: half/bin/atomonly/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+WARNING: Proc sub-domain size < neighbor skin, could lead to lost atoms (src/domain.cpp:936)
+Setting up Verlet run ...
+  Unit style    : lj
+  Current step  : 0
+  Time step     : 0.04
+Per MPI rank memory allocation (min/avg/max) = 11.03 | 11.25 | 11.46 Mbytes
+Step Temp E_pair E_mol TotEng Press 
+       0            1    15.746691            0    17.246191    50.196243 
+   25000    1.0184594    8.4223706            0    9.9495505    45.088447 
+Loop time of 147.531 on 6 procs for 25000 steps with 3000 atoms
+
+Performance: 585640.503 tau/day, 169.456 timesteps/s
+97.6% CPU use with 6 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 79.569     | 90.251     | 95.197     |  56.7 | 61.17
+Neigh   | 15.413     | 16.264     | 17.134     |  13.7 | 11.02
+Comm    | 34.022     | 39.468     | 50.897     |  92.3 | 26.75
+Output  | 0.00014398 | 0.00014958 | 0.00017123 |   0.0 |  0.00
+Modify  | 0.67978    | 1.0408     | 1.2707     |  23.8 |  0.71
+Other   |            | 0.507      |            |       |  0.34
+
+Nlocal:    500 ave 513 max 493 min
+Histogram: 2 0 1 1 0 1 0 0 0 1
+Nghost:    16713.2 ave 16763 max 16675 min
+Histogram: 1 1 0 2 0 0 0 1 0 1
+Neighs:    678384 ave 688647 max 665002 min
+Histogram: 1 1 0 0 0 0 1 1 0 2
+
+Total # of neighbors = 4070302
+Ave neighs/atom = 1356.77
+Neighbor list builds = 888
+Dangerous builds = 1
+WARNING: Proc sub-domain size < neighbor skin, could lead to lost atoms (src/domain.cpp:936)
+Setting up Verlet run ...
+  Unit style    : lj
+  Current step  : 0
+  Time step     : 0.04
+Per MPI rank memory allocation (min/avg/max) = 12.17 | 12.2 | 12.22 Mbytes
+Step Temp Press Density Volume 
+       0    1.0184594    45.072516            3         1000 
+     100    1.0334016    44.814326            3         1000 
+Loop time of 0.611238 on 6 procs for 100 steps with 3000 atoms
+
+Performance: 565409.608 tau/day, 163.602 timesteps/s
+95.3% CPU use with 6 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.33515    | 0.37204    | 0.40115    |   3.3 | 60.87
+Neigh   | 0.053771   | 0.057546   | 0.061014   |   1.0 |  9.41
+Comm    | 0.13402    | 0.1638     | 0.19144    |   4.3 | 26.80
+Output  | 6.1553e-05 | 0.0002829  | 0.00032813 |   0.0 |  0.05
+Modify  | 0.0039753  | 0.0098294  | 0.029506   |   9.0 |  1.61
+Other   |            | 0.007735   |            |       |  1.27
+
+Nlocal:    500 ave 510 max 494 min
+Histogram: 2 1 0 0 0 1 1 0 0 1
+Nghost:    16720.5 ave 16813 max 16640 min
+Histogram: 1 1 0 0 1 1 1 0 0 1
+Neighs:    678273 ave 691403 max 662878 min
+Histogram: 1 0 1 0 0 2 0 0 1 1
+
+Total # of neighbors = 4069637
+Ave neighs/atom = 1356.55
+Neighbor list builds = 3
+Dangerous builds = 0
+Total wall time: 0:02:28
+# mpiexec: finished at Wed 25 Nov 02:36:11 GMT 2020
+
+============================================
+
+        Job resource usage summary 
+
+                 Memory (GB)    NCPUs
+ Requested  :         8             6
+ Used       :         0 (peak)   5.22 (ave)
+
+============================================

@@ -1,0 +1,10 @@
+#PBS -l walltime=48:00:00
+#PBS -l select=1:ncpus=32:mem=32gb
+
+module load lammps/19Mar2020
+module load intel-suite
+module load mpi
+
+cd $PBS_O_WORKDIR
+
+mpiexec lmp -i in.combined_subsequent

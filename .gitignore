@@ -1,0 +1,14 @@
+# Ignore all text data files
+*.txt
+
+# Ignore all dump files
+dump.*
+
+# Ignore all log files
+log.lammps
+
+# Ignore all .npy files
+*.npy
+
+# Ignore __pycache__ folder
+__pycache__/

@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "micelle_analysis.py", line 66, in <module>
+    cluster_dict, poly_dict = get_clusters(poly_com[:, :, i], 
+NameError: name 'get_clusters' is not defined

@@ -1,0 +1,215 @@
+# mpiexec: MPI is /apps/mpi/intel/2019.6.166
+# mpiexec: No RDMA network found -- using sockets+shared memory
+# mpiexec: bootstrapping with /apps/mpi/intel/2019.6.166/bin/__pbs_tmrsh
+# mpiexec: full path to program is /apps/lammps/19Mar2020/bin/lmp
+# mpiexec: program arguments are: -i in.diffusion_msd
+# mpiexec: 8 ranks allocated via PBS select
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has shared use of the allocated nodes. Disabling process-pinning
+# mpiexec: machinefile configured as:
+cx3-1-8.cx3.hpc.ic.ac.uk:8
+#
+# mpiexec: Checking all nodes are ONLINE:
+# mpiexec: All nodes appear ONLINE
+# mpiexec: launch started at Sun  6 Dec 19:35:31 GMT 2020
+# mpiexec: launching program...
+# /apps/lammps/19Mar2020/bin/lmp -i in.diffusion_msd
+(cx3-1-8.cx3.hpc.ic.ac.uk:0,1,2,3,4,5,6,7)
+
+LAMMPS (19 Mar 2020)
+  using 1 OpenMP thread(s) per MPI task
+Created orthogonal box = (0 0 0) to (10 10 10)
+  2 by 2 by 2 MPI processor grid
+Created 3000 atoms
+  create_atoms CPU = 0.000734591 secs
+Neighbor list info ...
+  update every 2 steps, delay 10 steps, check yes
+  max neighbors/atom: 3000, page size: 100000
+  master list distance cutoff = 6
+  ghost atom cutoff = 6
+  binsize = 3, bins = 4 4 4
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair dpd, perpetual
+      attributes: half, newton on
+      pair build: half/bin/atomonly/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : lj
+  Current step  : 0
+  Time step     : 0.04
+Per MPI rank memory allocation (min/avg/max) = 5.514 | 5.794 | 5.9 Mbytes
+Step Temp E_pair E_mol TotEng Press 
+       0            1    7.8733454            0    9.3728454    26.724148 
+   10000    1.0130613     4.578851            0    6.0979364    23.894447 
+Loop time of 59.2424 on 8 procs for 10000 steps with 3000 atoms
+
+Performance: 583366.217 tau/day, 168.798 timesteps/s
+99.2% CPU use with 8 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 27.847     | 33.509     | 39.243     |  62.8 | 56.56
+Neigh   | 6.586      | 7.386      | 8.3698     |  22.5 | 12.47
+Comm    | 10.891     | 17.63      | 24.129     | 101.3 | 29.76
+Output  | 0.00013279 | 0.00016085 | 0.00034811 |   0.0 |  0.00
+Modify  | 0.32921    | 0.39217    | 0.45299    |   7.6 |  0.66
+Other   |            | 0.3255     |            |       |  0.55
+
+Nlocal:    375 ave 394 max 363 min
+Histogram: 4 0 0 1 0 0 1 0 0 2
+Nghost:    14356 ave 14416 max 14289 min
+Histogram: 1 0 0 1 2 1 1 0 1 1
+Neighs:    508687 ave 580204 max 456454 min
+Histogram: 1 1 2 0 1 1 0 1 0 1
+
+Total # of neighbors = 4069495
+Ave neighs/atom = 1356.5
+Neighbor list builds = 466
+Dangerous builds = 0
+Setting up Verlet run ...
+  Unit style    : lj
+  Current step  : 0
+  Time step     : 0.04
+Per MPI rank memory allocation (min/avg/max) = 6.257 | 6.266 | 6.275 Mbytes
+Step Temp Press Density Volume 
+       0    1.0130613    23.745613            3         1000 
+    1000     1.044707    23.873835            3         1000 
+    2000     1.034791    23.832988            3         1000 
+    3000     1.026374    23.866083            3         1000 
+    4000    1.0060524    23.894732            3         1000 
+    5000    1.0156603    23.780168            3         1000 
+    6000    1.0230532    23.711527            3         1000 
+    7000    1.0052125     23.61905            3         1000 
+    8000    1.0257479    24.088584            3         1000 
+    9000    1.0364981    23.607326            3         1000 
+   10000    1.0055252    23.673169            3         1000 
+   11000    1.0005945    23.796863            3         1000 
+   12000    1.0107844    23.773436            3         1000 
+   13000   0.99189108    23.935202            3         1000 
+   14000    1.0125964    23.638896            3         1000 
+   15000    1.0339265    23.730751            3         1000 
+   16000    1.0319263     23.83925            3         1000 
+   17000    1.0176358    23.827165            3         1000 
+   18000    1.0020389    23.902686            3         1000 
+   19000    1.0241222    23.888035            3         1000 
+   20000    1.0241118      23.8372            3         1000 
+   21000    1.0302139    23.830053            3         1000 
+   22000     1.036088    23.904942            3         1000 
+   23000    1.0009935    23.750241            3         1000 
+   24000    1.0346487    23.987169            3         1000 
+   25000    1.0380531    23.953101            3         1000 
+   26000    1.0072767    23.980639            3         1000 
+   27000    1.0256439    23.958072            3         1000 
+   28000    1.0394312    23.807428            3         1000 
+   29000    1.0073205    23.662392            3         1000 
+   30000    1.0327452    24.090286            3         1000 
+   31000    1.0257775    23.975166            3         1000 
+   32000    1.0139702     23.80488            3         1000 
+   33000     1.008401     23.65197            3         1000 
+   34000   0.99942566    23.588712            3         1000 
+   35000    1.0107057    23.816231            3         1000 
+   36000    1.0290587    23.925271            3         1000 
+   37000    1.0312752    23.677204            3         1000 
+   38000     1.019934    23.907457            3         1000 
+   39000    1.0037981     23.72947            3         1000 
+   40000    1.0313186    23.733415            3         1000 
+   41000    1.0476386    23.950214            3         1000 
+   42000    1.0216199    24.050087            3         1000 
+   43000    1.0214096    23.727492            3         1000 
+   44000     1.024853    23.682249            3         1000 
+   45000    1.0191239    23.618585            3         1000 
+   46000    1.0265648    23.824965            3         1000 
+   47000    1.0181459    23.949534            3         1000 
+   48000    1.0241329    24.019435            3         1000 
+   49000   0.99121855    23.942926            3         1000 
+   50000     1.016994    23.864005            3         1000 
+   51000    1.0025212    23.812121            3         1000 
+   52000    1.0520568    23.946968            3         1000 
+   53000    1.0265162    23.753823            3         1000 
+   54000    1.0443187    23.926236            3         1000 
+   55000    1.0584426    24.008376            3         1000 
+   56000     1.025256    23.765277            3         1000 
+   57000    1.0287963    24.009319            3         1000 
+   58000    1.0577037    23.999256            3         1000 
+   59000    1.0343888    23.705622            3         1000 
+   60000    1.0187419      24.0881            3         1000 
+   61000    1.0177582    23.787497            3         1000 
+   62000    1.0330521     24.03752            3         1000 
+   63000    1.0013351    23.589455            3         1000 
+   64000    1.0171677    23.843657            3         1000 
+   65000    1.0003957    23.745628            3         1000 
+   66000     1.015622    23.694181            3         1000 
+   67000    1.0184256    23.792776            3         1000 
+   68000    1.0297589    23.763104            3         1000 
+   69000    1.0453092     23.81979            3         1000 
+   70000    1.0434083    23.844366            3         1000 
+   71000     1.040883    23.826444            3         1000 
+   72000    1.0096716    23.853505            3         1000 
+   73000    1.0073974    24.010821            3         1000 
+   74000    1.0266223    23.686508            3         1000 
+   75000    1.0371171    23.930276            3         1000 
+   76000    1.0155431    23.762503            3         1000 
+   77000   0.99675793    23.706338            3         1000 
+   78000   0.99625692    23.809772            3         1000 
+   79000    1.0499548     24.13985            3         1000 
+   80000    1.0445044    24.006722            3         1000 
+   81000    1.0417467    23.660287            3         1000 
+   82000    1.0176044    23.887403            3         1000 
+   83000    1.0104441    23.801979            3         1000 
+   84000    1.0147841    23.681003            3         1000 
+   85000    1.0169582     23.63276            3         1000 
+   86000    1.0250193     23.89641            3         1000 
+   87000    1.0190604    23.849778            3         1000 
+   88000    1.0447748    23.775523            3         1000 
+   89000    1.0437235    24.019924            3         1000 
+   90000     1.014474     23.84669            3         1000 
+   91000    1.0194246    23.676097            3         1000 
+   92000    1.0253022    23.809745            3         1000 
+   93000    1.0406336     23.74783            3         1000 
+   94000    1.0301749    24.043941            3         1000 
+   95000     1.020069    23.919589            3         1000 
+   96000    1.0368002    24.189876            3         1000 
+   97000     1.003054    23.775553            3         1000 
+   98000    1.0340234    24.047644            3         1000 
+   99000    1.0220344    23.993057            3         1000 
+  100000    1.0461321     23.74578            3         1000 
+Loop time of 572.043 on 8 procs for 100000 steps with 3000 atoms
+
+Performance: 604150.570 tau/day, 174.812 timesteps/s
+99.1% CPU use with 8 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 287.04     | 323.08     | 373.94     | 145.3 | 56.48
+Neigh   | 67.409     | 71.914     | 79.964     |  48.9 | 12.57
+Comm    | 111.74     | 169.45     | 204.28     | 221.4 | 29.62
+Output  | 0.01193    | 0.33743    | 0.38399    |  21.2 |  0.06
+Modify  | 3.036      | 4.1821     | 9.8668     | 106.2 |  0.73
+Other   |            | 3.082      |            |       |  0.54
+
+Nlocal:    375 ave 385 max 362 min
+Histogram: 1 0 1 1 0 1 2 0 0 2
+Nghost:    14392.1 ave 14419 max 14362 min
+Histogram: 1 2 0 0 1 0 0 0 3 1
+Neighs:    508817 ave 557155 max 447310 min
+Histogram: 1 0 2 0 1 0 0 1 2 1
+
+Total # of neighbors = 4070535
+Ave neighs/atom = 1356.85
+Neighbor list builds = 4635
+Dangerous builds = 0
+Total wall time: 0:10:31
+# mpiexec: finished at Sun  6 Dec 19:46:06 GMT 2020
+
+============================================
+
+        Job resource usage summary 
+
+                 Memory (GB)    NCPUs
+ Requested  :         8             8
+ Used       :         0 (peak)   7.68 (ave)
+
+============================================
